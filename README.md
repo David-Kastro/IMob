@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h3 align="center">Plano Imóveis App (Em desenvolvimento)</h3>
+  <h3 align="center">IMob App (Em desenvolvimento)</h3>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -17,8 +17,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## Sobre o Projeto
-
-Solicitado pela imobiliária "Plano Imóveis", este projeto foi iniciado visando a criação de um app para facilitar na busca, compra e aluguel de imóveis sem fiador, além de disponibilizar funcionalidades para corretores e opções para analise de crédito!
+Projeto foi iniciado visando a criação de um app para facilitar na busca, compra e aluguel de imóveis sem fiador, além de disponibilizar funcionalidades para corretores e opções para analise de crédito!
 
 ### Feito Com
 
