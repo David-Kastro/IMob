@@ -16,11 +16,14 @@ Para apresentar!!! -------- URGENTE --------
 [X] side bar
 [X] preços no mapa
 [X] higlight dos preços ao navegar pelos cards
-[] Resolver botoes sem Ripple
-[] esconder cards para baixo
+[X] Resolver botoes sem Ripple
 [X] favoritar
-[] abrir tela do imovel (clicando ou arrastando para o centro)
-[] tela do imovel
+[X] abrir tela do imovel (clicando ou arrastando para o centro)
+[X] tela do imovel
+[!] Refazer tela do imovel inspirado no design Rent Home
+[!] Refazer Seach bar inspirado no design Rent Home
+[!] Refazer tela de login inspirado no design Rent Home
+[!] Fluxo de aluguel do imóvel a partir da tela do imovel
 [] Loading cards com fade
 [] reload do cards ao mudar a posiçao do mapa
 [] mostrar apenas cards com preços no mapa

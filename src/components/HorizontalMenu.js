@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { View, Text, ScrollView, StyleSheet, Animated } from 'react-native';
+import { colors } from '../config/Theme';
 import {Card, IconButton} from 'react-native-paper';
 import Ripple from 'react-native-material-ripple';
 
@@ -66,19 +67,19 @@ class MenuItem extends Component{
             <Card elevation={3} style={[styles.card, {opacity: this.state.opacity, transform: [{scale: this.state.scale}]}]}>
                 <Ripple
                     style={{height: cardsHeight, width: cardsWidth }}
-                    rippleColor={id === selected ? 'white' : '#E30613'} 
+                    rippleColor={id === selected ? 'white' : colors.primary} 
                     rippleOpacity={1} 
                     rippleDuration={500} 
                     onPress={() => select(id)}
                 >
-                    <View style={[styles.content, {backgroundColor: id === selected ? '#ff4d4d' : 'white'}]}>
+                    <View style={[styles.content, {backgroundColor: id === selected ? colors.primary : 'white'}]}>
                         <IconButton
                             icon={icon}
-                            color={id === selected ? 'white' : '#666666'}
+                            color={id === selected ? 'white' : colors.secondary}
                             style={{width: 36, height: 36}}
                             size={36}
                         ></IconButton>
-                        <Text style={{color: id === selected ? 'white' : '#666666'}}>{title}</Text>
+                        <Text style={{color: id === selected ? 'white' : colors.secondary}}>{title}</Text>
                     </View>
                 </Ripple>
             </Card>

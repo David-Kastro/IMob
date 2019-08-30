@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { colors } from '../../config/Theme';
 
 import Point from '../../components/Point';
 
@@ -23,7 +24,7 @@ class Properties extends Component{
             coordinate={[ parseFloat( property.longitude ), parseFloat( property.latitude ) ]}
           >
             <Point 
-              backgroundColor={property.id === properties.selectedProperty ? '#E30613' : '#00cc7a'} 
+              backgroundColor={property.id === properties.selectedProperty ? colors.primary : colors.secondary} 
               color="white"
               text={property.price}
               activate={property.id === properties.selectedProperty}        

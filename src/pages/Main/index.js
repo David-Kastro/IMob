@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import { colors } from '../../config/Theme';
+
 import { View, StyleSheet, StatusBar, Platform, Dimensions, ScrollView, Image } from 'react-native';
 import { Card, Paragraph, Subheading, Chip, FAB, Text, Title, Caption } from 'react-native-paper';
 import Searchbar from '../../components/SearchBar';
@@ -234,7 +236,7 @@ class Main extends Component {
         <View style={{flex: 1, flexDirection: 'column', position: 'absolute', bottom: 0}}>
 
           <View style={{marginLeft: 20}}>
-            <Title style={{fontWeight: '500', fontSize: 22}}>Águas Claras</Title>
+            <Title style={{fontWeight: '500', fontSize: 22, color: colors.secondary}}>Águas Claras</Title>
             <Caption style={{marginTop: -6, fontSize: 14}}>Brasília</Caption>
           </View>
 
@@ -243,7 +245,7 @@ class Main extends Component {
               elevation={6}
               icon="navigation"
               onPress={() => this.goToCurrentLocation()}
-              color='#E30613'
+              color={colors.primary}
               style={{backgroundColor: 'white'}}
             />
           </View>

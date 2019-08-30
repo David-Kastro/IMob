@@ -2,6 +2,7 @@ import React from 'react';
 import { Surface, IconButton, Avatar } from 'react-native-paper';
 import { View, TextInput } from 'react-native';
 import thumb from '../assets/1.jpg'
+import { colors } from '../config/Theme';
 
 const SearchBar = ({placeholder = '', value = '', onChangeText = () => {}, onMenu = () => {}, width = '100%', menuOpen = false}) => (
     
@@ -9,7 +10,7 @@ const SearchBar = ({placeholder = '', value = '', onChangeText = () => {}, onMen
         <View style={{width: 60, height: '100%', justifyContent:'center', alignItems: 'center'}}>
             <IconButton
                 icon={menuOpen ? "clear" : "menu" }
-                color="#E30613"
+                color={colors.primary}
                 onPress={() => onMenu()}
             />
         </View>

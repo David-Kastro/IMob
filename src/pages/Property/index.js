@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import { Image, View, ScrollView, Dimensions, StatusBar, Text } from 'react-native';
-import { IconButton, Title, Subheading, FAB, Paragraph, Divider } from 'react-native-paper';
+import { IconButton, Title, Subheading, FAB, Paragraph, Divider, Colors } from 'react-native-paper';
 import Ripple from 'react-native-material-ripple';
 
 import { connect } from 'react-redux';
@@ -9,8 +9,10 @@ import { bindActionCreators } from 'redux';
 import { Creators as AuthActions } from "../../store/ducks/Authentication";
 import { Creators as PropertiesActions } from "../../store/ducks/Properties";
 
-const panelHeight = Dimensions.get('window').height * 0.55;
-const cardRadius = 40;
+import { colors } from '../../config/Theme';
+
+const panelHeight = Dimensions.get('window').height * 0.45;
+const cardRadius = 0;
 
 class Property extends Component {
 
@@ -65,7 +67,7 @@ class Property extends Component {
                     <FAB
                       elevation={6}
                       icon="favorite"
-                      color='#E30613'
+                      color="#ff3300"
                       style={{backgroundColor: 'white', top: -30, right: -50}}
                     />
                 </View>
@@ -80,7 +82,7 @@ class Property extends Component {
                         elevation={6}
                         icon="business"
                         color='white'
-                        style={{backgroundColor: '#E30613'}}
+                        style={{backgroundColor: colors.primary}}
                       />
                     </View>
                     <View style={{flex: 1, flexGrow: 3}}>
@@ -93,7 +95,7 @@ class Property extends Component {
                       <FAB
                         elevation={6}
                         icon="attach-money"
-                        color='#E30613'
+                        color={colors.primary}
                         style={{backgroundColor: 'white'}}
                       />
                     </View>
@@ -110,7 +112,7 @@ class Property extends Component {
                     >
                       <IconButton
                         icon="expand-more"
-                        color="#00cc7a"
+                        color={colors.secondary}
                         size={40}
                         style={{width: 40, height: 40}}
                       />
