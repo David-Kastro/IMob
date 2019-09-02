@@ -26,13 +26,14 @@ const theme = {
     // backdrop: ,        // color for backdrops of various components such as modals.
   },
   fonts: {
-    ...DefaultTheme.fonts,
-    // regular: ,
-    // medium: ,
-    // light: ,
-    // thin: ,
+    regular: "Nunito Regular",
+    medium: "Nunito Medium",
+    light: "Nunito Light",
+    thin: "Nunito Thin",
   }
 };
+
+console.log( DefaultTheme.fonts )
 
 export default class App extends Component {
 

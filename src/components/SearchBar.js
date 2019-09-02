@@ -19,7 +19,7 @@ const SearchBar = ({placeholder = '', value = '', onChangeText = () => {}, onMen
                 placeholder={placeholder} 
                 value={value} 
                 onChangeText={input => onChangeText(input)} 
-                style={{fontSize: 18, color: '#666666'}} 
+                style={{fontSize: 18, color: '#666666', fontFamily: 'Nunito Regular'}} 
                 underlineColorAndroid="transparent"
             />
         </View>

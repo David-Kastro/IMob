@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 
 import { colors } from '../../config/Theme';
 
-import { View, StyleSheet, StatusBar, Platform, Dimensions, ScrollView, Image } from 'react-native';
-import { Card, Paragraph, Subheading, Chip, FAB, Text, Title, Caption } from 'react-native-paper';
+import { View, StyleSheet, StatusBar, Platform, Dimensions, ScrollView, Image, Text } from 'react-native';
+import { Card, Paragraph, Subheading, Chip, FAB, Title, Caption } from 'react-native-paper';
 import Searchbar from '../../components/SearchBar';
 import HorizontalMenu from '../../components/HorizontalMenu';
 import Ripple from 'react-native-material-ripple';
@@ -22,8 +22,8 @@ import MapboxGL from '@mapbox/react-native-mapbox-gl';
 
 MapboxGL.setAccessToken('pk.eyJ1IjoiZGF2aWRrYXMiLCJhIjoiY2p5ZzNrOXBhMWlxcDNscW91bnYzaGhqMiJ9.Jafi9wsh04DbaaIYjFSrVQ');
 
-const cardsWidth = Dimensions.get('window').width * 0.86;
-const cardsHeight = Dimensions.get('window').width * 0.34;
+const cardsWidth = Dimensions.get('window').width * 0.88;
+const cardsHeight = Dimensions.get('window').width * 0.36;
 const cardsSpacing = 10;
 
 const imoveis = [
@@ -34,8 +34,9 @@ const imoveis = [
     type: 'Apartamento',
     image: require('../../assets/img1.jpg'),
     price: 'R$ 4.800',
-    size: '65m²',
-    dorms: '2 Dorm',
+    size: '65',
+    dorms: '2',
+    baths: '2',
     longitude: -48.033634050658634,
     latitude: -15.837634192063879,
     favorited: false,
@@ -47,8 +48,9 @@ const imoveis = [
     type: 'Apartamento',
     image: require('../../assets/img2.jpg'),
     price: 'R$ 5.920',
-    size: '84m²',
-    dorms: '3 Dorm',
+    size: '84',
+    dorms: '3',
+    baths: '2',
     longitude: -48.038123315092264,
     latitude: -15.838789075651658,
     favorited: false,
@@ -60,8 +62,9 @@ const imoveis = [
     type: 'Apartamento',
     image: require('../../assets/img3.jpg'),
     price: 'R$ 1.780',
-    size: '51m²',
-    dorms: '1 Dorm',
+    size: '51',
+    dorms: '1',
+    baths: '2',
     longitude: -48.0374454693366,
     latitude: -15.841130224199306,
     favorited: false,
@@ -73,8 +76,9 @@ const imoveis = [
     type: 'Apartamento',
     image: require('../../assets/img4.jpg'),
     price: 'R$ 8.600',
-    size: '116m²',
-    dorms: '4 Dorm',
+    size: '116',
+    dorms: '4',
+    baths: '2',
     longitude: -48.036106759843506,
     latitude: -15.83844616645192,
     favorited: false,
@@ -236,7 +240,7 @@ class Main extends Component {
         <View style={{flex: 1, flexDirection: 'column', position: 'absolute', bottom: 0}}>
 
           <View style={{marginLeft: 20}}>
-            <Title style={{fontWeight: '500', fontSize: 22, color: colors.secondary}}>Águas Claras</Title>
+            <Title style={{fontSize: 22, color: colors.secondary}}>Águas Claras</Title>
             <Caption style={{marginTop: -6, fontSize: 14}}>Brasília</Caption>
           </View>
 
@@ -273,21 +277,24 @@ class Main extends Component {
                 >
                   <View style={{flex: 1, flexGrow: 2}}>
                       <Image 
-                        style={{width: '100%', height: cardsHeight, borderRadius: 20, borderWidth: 2, borderColor:'white'}} 
+                        style={{width: '100%', height: cardsHeight}} 
                         source={property.image} />
                   </View>
                   <View style={{flex: 1, flexGrow: 3, flexDirection: 'column', justifyContent: "space-between"}}>
                       <View style={{marginTop: 10, marginLeft: 10}}>
-                        <Subheading style={{fontWeight: '500', color: '#666666'}}>
-                          {this.ellipsisText( property.title, 18)}
-                        </Subheading>
+                        <Title style={{color: '#666666', fontSize: 16}}>
+                          {this.ellipsisText( property.title, 22)}
+                        </Title>
                         <Caption>{this.ellipsisText( property.description, 50)}</Caption>
                       </View>
-                      <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                        <Chip elevation={0} icon="straighten" selectedColor='#787878' style={{backgroundColor: 'transparent', flex: 1}}>
+                      <View style={{flexDirection: 'row'}}>
+                        <Chip elevation={0} icon="straighten" selectedColor='#787878' style={{backgroundColor: 'transparent'}}>
                           { property.size }
                         </Chip>
-                        <Chip elevation={0} icon="hotel" selectedColor='#787878' style={{backgroundColor: 'transparent', flex: 1}}>
+                        <Chip elevation={0} icon="hotel" selectedColor='#787878' style={{backgroundColor: 'transparent'}}>
+                          { property.dorms }
+                        </Chip>
+                        <Chip elevation={0} icon="hot-tub" selectedColor='#787878' style={{backgroundColor: 'transparent'}}>
                           { property.dorms }
                         </Chip>
                       </View>

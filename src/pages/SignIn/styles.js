@@ -1,21 +1,23 @@
 import React, {Component} from 'react';
 
 import { View, Image, Dimensions, Animated } from 'react-native';
-import { TextInput, ActivityIndicator, TouchableRipple, Button, Card, IconButton } from 'react-native-paper';
+import { TextInput, ActivityIndicator, TouchableRipple, Button, Card, IconButton, Text, Title } from 'react-native-paper';
 import styled from 'styled-components/native';
+
+import { colors } from '../../config/Theme';
 
 const SignUpIcon = () => (
     <View style  = {{ width: '100%', height: '100%' }}>
       <Image
         source   = { require('../../assets/add.png') }
-        style    = {{ width: 40, height: 40, top: 17, right: 4, tintColor: '#E30613' }}
+        style    = {{ width: 40, height: 40, top: 17, right: 4, tintColor: colors.primary }}
       /> 
     </View>
 )
 
 export const Container = styled.View`
     align-items      : center;
-    background-color : rgba(227, 6, 19, 0.6);
+    background-color : rgba(35, 60, 83, 0.6);
     paddingTop       : 20;
     flex             : 1;
 `;
@@ -35,7 +37,7 @@ export const ArrowBackIcon = styled(IconButton).attrs({
 `;
 
 export const Logo = styled(Animated.Image).attrs({
-    source          : require('../../assets/Planologo.png'),
+    source          : require('../../assets/logo2.png'),
     resizeMode      : "contain"
 })`
     marginTop       : ${Dimensions.get('window').height * 0.09}; 
@@ -52,13 +54,12 @@ export const Banner = styled(Animated.View)`
     marginTop       : ${Dimensions.get('window').height * 0.32};
 `;
 
-export const BannerHeader = styled.Text`
-    fontSize        : 22;
-    fontWeight      : bold;
+export const BannerHeader = styled(Title)`
+    fontSize        : 24;
     color           : 'rgba(255,255,255,1)';
 `;
 
-export const BannerText = styled.Text`
+export const BannerText = styled(Text)`
     fontSize        : 18;
     marginTop       : 10;
     color           : 'rgba(255,255,255,0.8)';
@@ -91,7 +92,7 @@ export const ForgotMyPassword = styled.View`
     margin-top      : 25px;
 `;
 
-export const ForgotMyPasswordText = styled.Text`
+export const ForgotMyPasswordText = styled(Text)`
     color           : #797979;
 `;
 
@@ -106,11 +107,12 @@ export const LoginButton = styled(TouchableRipple).attrs({
     rippleColor : "rgba(255, 255, 255, 1)",
 })`
     width           : 100%;
-    height          : 50px;
-    background-color : rgba(227, 6, 19, 0.8);
+    height          : 46px;
+    background-color : ${colors.primary};
     flexDirection   : row;
     justifyContent  : center;
     alignItems      : center;
+    borderRadius    : 23;
     marginTop       : 20;
 `;
 
@@ -120,6 +122,7 @@ export const LoginButtonContent = styled.View`
 `;
 
 export const LoginButtonText = styled.Text`
+    fontFamily      : Nunito Regular
     fontSize        : 20;
     color           : white;
 `;

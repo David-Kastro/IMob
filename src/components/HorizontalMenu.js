@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { View, Text, ScrollView, StyleSheet, Animated } from 'react-native';
+import { View, ScrollView, StyleSheet, Animated } from 'react-native';
+import { Text } from 'react-native-paper';
 import { colors } from '../config/Theme';
 import {Card, IconButton} from 'react-native-paper';
 import Ripple from 'react-native-material-ripple';
