@@ -34,6 +34,12 @@ const menuItems = [
         title: 'Filtros',
         icon: 'tune',
     },
+    {
+        id: 6,
+        title: 'Sair',
+        icon: 'power-settings-new',
+        signout: true,
+    },
 ];
 
 class MenuItem extends Component{
@@ -62,7 +68,7 @@ class MenuItem extends Component{
     }
 
     render() {
-        const {id, title, icon, selected, select} = this.props;
+        const {id, title, icon, selected, select, signout, signoutFunction} = this.props;
 
         return (
             <Card elevation={3} style={[styles.card, {opacity: this.state.opacity, transform: [{scale: this.state.scale}]}]}>
@@ -71,7 +77,7 @@ class MenuItem extends Component{
                     rippleColor={id === selected ? 'white' : colors.primary} 
                     rippleOpacity={1} 
                     rippleDuration={500} 
-                    onPress={() => select(id)}
+                    onPress={() => signout ? signoutFunction() : select(id)}
                 >
                     <View style={[styles.content, {backgroundColor: id === selected ? colors.primary : 'white'}]}>
                         <IconButton
@@ -115,6 +121,8 @@ export default class HorizontalMenu extends Component {
                             selected={this.state.selected}
                             timeout={200 + (150 * +item.id)} 
                             select={(id) => this.setState({selected: id})}
+                            signout={item.signout}
+                            signoutFunction={() => this.props.SignOut()}
                         />
                     ))}
 

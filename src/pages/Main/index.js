@@ -19,6 +19,7 @@ import { Creators as PropertiesActions } from "../../store/ducks/Properties";
 import Properties from './properties';
 
 import MapboxGL from '@mapbox/react-native-mapbox-gl';
+import firebase from 'react-native-firebase';
 
 MapboxGL.setAccessToken('pk.eyJ1IjoiZGF2aWRrYXMiLCJhIjoiY2p5ZzNrOXBhMWlxcDNscW91bnYzaGhqMiJ9.Jafi9wsh04DbaaIYjFSrVQ');
 
@@ -96,6 +97,23 @@ class Main extends Component {
 
   goToCurrentLocation = debounce( this.goToCurrentLocation, 500 );
   selectProperty      = debounce( this.selectProperty, 800 );
+
+  async signOut() {
+    
+    const { auth }            = this.props;
+
+    this.props.SignoutLoading( auth.loading );
+
+    try {
+
+        await firebase.auth().signOut();
+
+    } catch(err) {
+
+        this.props.SignoutError(err);
+
+    }   
+  }
 
   async componentDidMount() {
 
@@ -231,7 +249,7 @@ class Main extends Component {
             width={Dimensions.get('window').width * 0.90}
           />
           {
-            this.state.showMenu ? <HorizontalMenu /> : null
+            this.state.showMenu ? <HorizontalMenu SignOut={() => this.signOut()} /> : null
           }
         </View>
         
